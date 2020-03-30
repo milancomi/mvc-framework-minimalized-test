@@ -2,7 +2,6 @@
 
 
 return [
-    ['GET', '/', ['Example\Controllers\Homepage', 'show']],
-    ['GET', '/test', ['Example\Controllers\TestController', 'show2']],
+    ['GET', '/', ['Example\Controllers\TestController', 'index']],
 
 ];

@@ -4,7 +4,6 @@ require __DIR__ . '/../vendor/autoload.php';
 $request = new \Http\HttpRequest($_GET, $_POST, $_COOKIE, $_FILES, $_SERVER);
 $response = new \Http\HttpResponse;
 
-// Exceptions
 error_reporting(E_ALL);
 
 $environment = 'development';
@@ -24,19 +23,11 @@ $whoops->register();
 
 
 
+
 // importdepedencies
 $injector = include('Dependencies.php');
-
 $request = $injector->make('Http\HttpRequest');
 $response = $injector->make('Http\HttpResponse');
-
-
-
-
-
-//  $response->setContent('404 - Page not found');
-//  $response->setStatusCode(404);
-
 
 // ROUTE AND ROUTE DISPATCHER
 $routeDefinitionCallback = function (\FastRoute\RouteCollector $r) {
@@ -47,9 +38,6 @@ $routeDefinitionCallback = function (\FastRoute\RouteCollector $r) {
 };
 
 $dispatcher = \FastRoute\simpleDispatcher($routeDefinitionCallback);
-
-
-
 $routeInfo = $dispatcher->dispatch($request->getMethod(), $request->getPath());
 
 switch ($routeInfo[0]) {
@@ -71,8 +59,7 @@ switch ($routeInfo[0]) {
             break;
 }
 
-
-
+// Show all response
 foreach ($response->getHeaders() as $header) {
     header($header, false);
 }
