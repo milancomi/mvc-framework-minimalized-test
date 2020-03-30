@@ -1,5 +1,8 @@
 <?php declare(strict_types = 1);
 require __DIR__ . '/../vendor/autoload.php';
+//Request and Response
+$request = new \Http\HttpRequest($_GET, $_POST, $_COOKIE, $_FILES, $_SERVER);
+$response = new \Http\HttpResponse;
 
 // Exceptions
 error_reporting(E_ALL);
@@ -28,15 +31,11 @@ $request = $injector->make('Http\HttpRequest');
 $response = $injector->make('Http\HttpResponse');
 
 
-//Request and Response
-$request = new \Http\HttpRequest($_GET, $_POST, $_COOKIE, $_FILES, $_SERVER);
-$response = new \Http\HttpResponse;
 
 
-// $content = '<h1>Hello World</h1>';
-// $response->setContent($content);
-// $response->setContent('404 - Page not found');
-// $response->setStatusCode(404);
+
+//  $response->setContent('404 - Page not found');
+//  $response->setStatusCode(404);
 
 
 // ROUTE AND ROUTE DISPATCHER
@@ -74,7 +73,6 @@ switch ($routeInfo[0]) {
 
 
 
-// Response catcher
 foreach ($response->getHeaders() as $header) {
     header($header, false);
 }
