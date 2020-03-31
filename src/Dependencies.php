@@ -3,6 +3,9 @@
 $injector = new \Auryn\Injector;
 
 $injector->alias('Http\Request', 'Http\HttpRequest');
+$injector->alias('Example\Controllers\UserRepositoryInterface', 'Example\Controllers\UserRepository');
+$injector->share('Example\Controllers\UserRepositoryInterface');
+
 $injector->share('Http\HttpRequest');
 $injector->define('Http\HttpRequest', [
     ':get' => $_GET,

@@ -1,4 +1,8 @@
 <?php declare(strict_types = 1);
+
+use Example\Controllers\UserRepository;
+use Example\Controllers\UserRepositoryInterface;
+
 require __DIR__ . '/../vendor/autoload.php';
 //Request and Response
 $request = new \Http\HttpRequest($_GET, $_POST, $_COOKIE, $_FILES, $_SERVER);
@@ -28,6 +32,7 @@ $whoops->register();
 $injector = include('Dependencies.php');
 $request = $injector->make('Http\HttpRequest');
 $response = $injector->make('Http\HttpResponse');
+$userRepository = $injector->make('Example\Controllers\UserRepositoryInterface');
 
 // ROUTE AND ROUTE DISPATCHER
 $routeDefinitionCallback = function (\FastRoute\RouteCollector $r) {
@@ -58,6 +63,19 @@ switch ($routeInfo[0]) {
             $class->$method($vars);
             break;
 }
+
+
+// $container = new DI\Container();
+// $containerBuilder = new DI\ContainerBuilder();
+// $containerBuilder->addDefinitions('config.php');
+
+// // $containerBuilder->addDefinitions([
+// //     UserRepositoryInterface::class =>UserRepository::class,
+
+// // ]);
+
+// $container = $containerBuilder->build();
+
 
 // Show all response
 foreach ($response->getHeaders() as $header) {
