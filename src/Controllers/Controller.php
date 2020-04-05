@@ -7,7 +7,8 @@ class Controller
 {
 
     public function render($view, $data=[]) {
-     extract($data);
+        extract($data);
+
 
         ob_start();
         include __DIR__ . '/../../views'.'/' .$view.".php";
