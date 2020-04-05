@@ -1,10 +1,11 @@
 <?php declare(strict_types = 1);
 
 namespace Example\Controllers;
-
 use Http\Request;
 use Http\Response;
 use Example\Controllers\Controller;
+use Example\Models\User;
+
 class TestController extends Controller
 
 {
@@ -26,7 +27,11 @@ class TestController extends Controller
     public function index()
     {
 
-        $data = $this->userRepository->search(1231);
+
+        //$data = $this->userRepository->getAllUsers();
+        $data = User::all();
+
+
                 $data =['para1'=>$data];
                 $content = $this->render('Location',$data);
                 $this->response->setContent($content);

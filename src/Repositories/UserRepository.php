@@ -7,10 +7,6 @@ use Example\Controllers\UserRepositoryInterface;
 class UserRepository implements UserRepositoryInterface
 {
 
-   public function getAllUsers(){
-
-      return User::all();
-   }
    public function search($name)
    {
       return   "SEARCHED".$name;
