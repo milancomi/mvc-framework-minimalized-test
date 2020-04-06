@@ -38,4 +38,32 @@ class TestController extends Controller
 
     }
 
+    public function register()
+    {
+
+
+        //$data = $this->userRepository->getAllUsers();
+        $data = User::all();
+
+
+                $data =['para1'=>$data];
+                $content = $this->render('auth/register',$data);
+                $this->response->setContent($content);
+
+    }
+
+    public function login()
+    {
+
+
+        //$data = $this->userRepository->getAllUsers();
+        $data = User::all();
+
+
+                $data =['para1'=>$data];
+                $content = $this->render('auth/login',$data);
+                $this->response->setContent($content);
+
+    }
+
 }
