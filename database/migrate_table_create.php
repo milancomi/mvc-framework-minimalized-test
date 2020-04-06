@@ -1,6 +1,7 @@
 <?php
-require_once 'vendor/autoload.php';
-require_once 'configuration.php';
+require  __DIR__ . '/../vendor/autoload.php';
+require  __DIR__ . '/../configuration.php';
+
 $dbServername = DB_SERVER_NAME;
 $dbUsername = DB_USER_NAME;
 $dbPassword = DB_PASSWORD;
