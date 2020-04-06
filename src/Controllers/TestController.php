@@ -33,7 +33,7 @@ class TestController extends Controller
 
 
                 $data =['para1'=>$data];
-                $content = $this->render('Location',$data);
+                $content = $this->render('user/index',$data);
                 $this->response->setContent($content);
 
     }
