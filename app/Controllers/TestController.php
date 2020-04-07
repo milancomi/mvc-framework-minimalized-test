@@ -10,13 +10,13 @@ class TestController extends Controller
 
 {
 
-    
     private $userRepository;
+    private $request;
     private $response;
 
     // ProductRepositoryInterface
 
-    public function __construct(Request $request, Response $response,UserRepositoryInterface $userRepository)
+    public  function __construct(Request $request, Response $response,UserRepositoryInterface $userRepository)
     {
         $this->request = $request;
         $this->response = $response;
@@ -64,6 +64,21 @@ class TestController extends Controller
                 $content = $this->render('auth/login',$data);
                 $this->response->setContent($content);
 
+    }
+
+
+    public function signUp()
+    {
+        $data = $this->request->getBodyParameters();
+
+        $u_name = $data["u_teh_stack"][0];
+        $i  = count($data["u_teh_stack"]);
+
+
+        
+
+        
+        
     }
 
 }

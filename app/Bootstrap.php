@@ -4,8 +4,8 @@ use Example\Controllers\UserRepository;
 use Example\Controllers\UserRepositoryInterface;
 
 require __DIR__ . '/../vendor/autoload.php';
-require  __DIR__ . '../database/database.php';
-
+require  __DIR__ . '/../database/database.php';
+require __DIR__ . '/helpers/functions.php';
 //Request and Response
 $request = new \Http\HttpRequest($_GET, $_POST, $_COOKIE, $_FILES, $_SERVER);
 $response = new \Http\HttpResponse;

@@ -5,5 +5,7 @@ return [
     ['GET', '/ad', ['Example\Controllers\TestController', 'index']],
     ['GET', '/register', ['Example\Controllers\TestController', 'register']],
     ['GET', '/login', ['Example\Controllers\TestController', 'login']],
+    ['POST', '/auth/signUp', ['Example\Controllers\TestController', 'signUp']],
 
+    
 ];
