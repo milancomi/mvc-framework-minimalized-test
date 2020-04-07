@@ -71,14 +71,8 @@ class TestController extends Controller
     {
         $data = $this->request->getBodyParameters();
 
-        $u_name = $data["u_teh_stack"][0];
-        $i  = count($data["u_teh_stack"]);
-
-
-        
-
-        
-        
+        $user = $this->userRepository->create($data);
+                
     }
 
 }

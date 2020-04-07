@@ -31,14 +31,14 @@
                 <label class="col-lg-9 control-label mb-0 f14 font-weight-bold"><span
                     class="ml-1 strong f14 font-weight-bold"></span>Username</label>
                 <div class="col-lg-12">
-                  <input id=" u_name" name=" u_name" type="text" class="form-control f14" placeholder=""
+                  <input id="u_name" name="u_name" type="text" class="form-control f14" placeholder=""
                     required="required" >
                 </div>
               </div>
               <div class="col-lg-6">
                 <label class="col-lg-9 control-label mb-0 f14 font-weight-bold">Password</label>
                 <div class="col-lg-12">
-                  <input id=" u_password" name=" u_password" type="text" class="form-control f14" placeholder=""
+                  <input id="u_password" name="u_password" type="text" class="form-control f14" placeholder=""
                        >
                 </div>
               </div>
@@ -48,7 +48,7 @@
                 <label class="col-lg-9 control-label mb-0 f14 font-weight-bold"><span
                     class="ml-1 strong f14 font-weight-bold"></span>E-mail</label>
                 <div class="col-lg-12">
-                  <input id="u_mail" name="u_mail" type="text" class="form-control f14" placeholder=""
+                  <input id="u_email" name="u_email" type="text" class="form-control f14" placeholder=""
                         >
                 </div>
               </div>

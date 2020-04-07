@@ -3,22 +3,15 @@ Namespace Example\Models;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class User extends Eloquent {
+class UserTehStack extends Eloquent {
     
     // Eloquent object relational mapping from Packagist
     // shorthands for sql and pretty nice object filled with data from database
 
     public $name;
     public $timestamps=[]; 
-    protected $fillable = ['u_name','u_email','u_password','u_type','u_sub_type'];
-
-// with('teh')
-    public function teh()
-    {
-
-        return $this->belongsToMany(TehStack::class);
-    }
-     
+    protected $fillable = ['u_id','u_teh_stack_id'];
+    
 }
 
 
